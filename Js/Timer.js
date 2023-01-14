@@ -17,8 +17,7 @@ class TimerViewBackground {
     addEventListener("resize", this.resize.bind(this));
 
     this.resize();
-    this.drawClock();
-    this.drawIndicator();
+    this.resetAnimation();
   }
 
   startAnimation() {

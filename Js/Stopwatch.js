@@ -16,8 +16,7 @@ class StopwatchViewBackground {
     addEventListener("resize", this.resize.bind(this));
 
     this.resize();
-    this.drawClock();
-    this.drawIndicator();
+    this.resetAnimation();
   }
 
   startAnimation() {
@@ -33,6 +32,8 @@ class StopwatchViewBackground {
   resetAnimation() {
     this.stopAnimation();
     this.indicator_angle = 0;
+    this.ctx.setTransform(1,0,0,1,0,0);
+    this.ctx.translate(this.canvas_w / 2, this.canvas_h / 2);
     this.ctx.clearRect(-this.canvas_w / 2, -this.canvas_h / 2, this.canvas_w, this.canvas_h);
     this.drawClock();
     this.drawIndicator();
@@ -45,6 +46,8 @@ class StopwatchViewBackground {
     this.canvas.height = this.canvas_h;
     this.indicator_radius = this.canvas_h / 2.5;
     this.clock_radius = this.canvas_h / 2.2;
+    this.indicator_angle = 0;
+
     this.ctx.translate(this.canvas_w / 2, this.canvas_h / 2);
     this.drawClock();
     this.drawIndicator();
