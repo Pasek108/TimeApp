@@ -2,6 +2,7 @@
 Time related app with stopwatch, timer, alarms and calculator (dates, time, age) with beautiful animated backgrounds.<br>
 See [live demo](https://pas-artur.000webhostapp.com/TimeApp/).
 
+![Example screenshot](screenshot.png)
 
 ## Table of Contents
 * [Technologies Used](#technologies-used)
