@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artur Pas - Projekt</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" />
+
+    <link rel="stylesheet" href="Style/css/style.css" />
+  </head>
+
+  <body>
+    <!-- --------------------------- Page background --------------------------- -->
+    <canvas class="page-background"></canvas>
+
+    <div class="views-container">
+      <div class="views">
+        <!-- --------------------------- Swopwatch view --------------------------- -->
+        <div class="stopwatch-view">
+          <canvas class="background"></canvas>
+          <div class="title">Stopwatch</div>
+
+          <div class="timer">00:00:00:00</div>
+
+          <div class="row">
+            <button class="start view-control-button">Start</button>
+            <button class="stop view-control-button">Stop</button>
+            <button class="reset view-control-button">Reset</button>
+          </div>
+        </div>
+
+        <!-- --------------------------- Timer view --------------------------- -->
+        <div class="timer-view hidden">
+          <canvas class="background"></canvas>
+          <div class="title">Timer</div>
+
+          <div class="timer-setting row">
+            <input type="number" class="hours" min="0" max="59" value="00" />: <input type="number" class="minutes" min="0" max="59" value="00" />:
+            <input type="number" class="seconds" min="0" max="59" value="00" />
+          </div>
+
+          <div class="timer" style="display: none">00:00:00</div>
+
+          <div class="row">
+            <button class="start view-control-button">Start</button>
+            <button class="stop view-control-button">Stop</button>
+            <button class="reset view-control-button">Reset</button>
+          </div>
+        </div>
+
+        <!-- --------------------------- Alarm view --------------------------- -->
+        <div class="alarm-view hidden">
+          <div class="title">Alarm</div>
+
+          <div class="alarms-grid">
+            <div class="alarm add"></div>
+            <div class="alarm add"></div>
+            <div class="alarm add"></div>
+            <div class="alarm add"></div>
+            <div class="alarm add"></div>
+            <div class="alarm add"></div>
+            <div class="alarm add"></div>
+            <div class="alarm add"></div>
+          </div>
+        </div>
+
+        <!-- --------------------------- Calculator view --------------------------- -->
+        <div class="calculator-view hidden">
+          <div class="title">Calculator</div>
+
+          <div class="dates-diff calculator">
+            <h2>Dates difference</h2>
+            <div class="row">
+              <input type="date" class="date1" />
+              <input type="date" class="date2" />
+              <button class="view-control-button calculate">Calculate</button>
+            </div>
+
+            <div class="result"></div>
+          </div>
+
+          <div class="time-diff calculator row hidden">
+            <h2>Time difference</h2>
+            <div class="row">
+              <input type="time" class="time1" />
+              <input type="time" class="time2" />
+              <button class="view-control-button calculate">Calculate</button>
+            </div>
+
+            <div class="result"></div>
+          </div>
+
+          <div class="birthday calculator row hidden">
+            <h2>Birthday</h2>
+            <div class="row">
+              <input type="date" class="date1" />
+              <button class="view-control-button calculate">Calculate</button>
+            </div>
+
+            <div class="result"></div>
+          </div>
+
+          <div class="row">
+            <button class="dates-diff view-control-button">Date</button>
+            <button class="time-diff view-control-button">Time</button>
+            <button class="birthday view-control-button">Birthday</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- --------------------------- Add alarm view --------------------------- -->
+    <div class="add-alarm-view hidden">
+      <h1 class="title">Add new alarm</h1>
+      <h1 class="title">Edit alarm</h1>
+
+      <div class="row">
+        <label for="name">Name:</label>
+        <input type="text" class="name" id="name" />
+      </div>
+
+      <div class="row">
+        <label for="time">Time:</label>
+        <input type="time" class="time" id="time" />
+      </div>
+
+      <div class="days">
+        <div class="row">
+          <input type="checkbox" class="mon" id="mon" />
+          <label for="mon">Mon</label>
+        </div>
+
+        <div class="row">
+          <input type="checkbox" class="tue" id="tue" />
+          <label for="tue">Tue</label>
+        </div>
+
+        <div class="row">
+          <input type="checkbox" class="wed" id="wed" />
+          <label for="wed">Wed</label>
+        </div>
+
+        <div class="row">
+          <input type="checkbox" class="thu" id="thu" />
+          <label for="thu">Thu</label>
+        </div>
+
+        <div class="row">
+          <input type="checkbox" class="fri" id="fri" />
+          <label for="fri">Fri</label>
+        </div>
+
+        <div class="row">
+          <input type="checkbox" class="sat" id="sat" />
+          <label for="sat">Sat</label>
+        </div>
+
+        <div class="row">
+          <input type="checkbox" class="sun" id="sun" />
+          <label for="sun">Sun</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <button class="view-control-button add">Add</button>
+        <button class="view-control-button delete">Delete</button>
+        <button class="view-control-button cancel">Cancel</button>
+      </div>
+    </div>
+
+    <!-- --------------------------- Modes buttons --------------------------- -->
+    <div class="modes-container">
+      <div class="modes">
+        <button class="mode-button stopwatch">
+          <i class="fa-solid fa-stopwatch"></i>
+          Stopwatch
+        </button>
+
+        <button class="mode-button timer">
+          <i class="fa-regular fa-hourglass-half"></i>
+          Timer
+        </button>
+
+        <button class="mode-button alarm">
+          <i class="fa-solid fa-bell"></i>
+          Alarm
+        </button>
+
+        <button class="mode-button calculator">
+          <i class="fa-solid fa-calculator"></i>
+          Calculator
+        </button>
+      </div>
+
+      <footer>Artur Pas 2023</footer>
+    </div>
+
+    <!-- --------------------------- Scripts --------------------------- -->
+    <script src="Js/Build/script.js"></script>
+    <script src="Js/Build/Background.js"></script>
+    <script src="Js/Build/Stopwatch.js"></script>
+    <script src="Js/Build/Timer.js"></script>
+    <script src="Js/Build/Calculator.js"></script>
+    <script src="Js/Build/Alarm.js"></script>
+  </body>
+</html>
