@@ -168,7 +168,7 @@ class TimerView {
     this.timer_container.innerText += `${String(this.time[2]).padStart(2, "0")}`;
 
     if (this.time[0] <= 0 && this.time[1] <= 0 && this.time[2] <= 0) {
-      new Audio("./alarm2.mp3").play();
+      new Audio("./Alarms/alarm2.mp3").play();
       this.restartTimer();
       return;
     }

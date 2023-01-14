@@ -106,7 +106,7 @@ class Alarm {
       if (this.is_active && `${hour}:${minutes}` == data.time) {
         if (data.days[day_id]) new Audio("./alarm.mp3").play();
         else if (!data.days.includes(true)) {
-          new Audio("./alarm.mp3").play();
+          new Audio("./Alarms/alarm.mp3").play();
 
           setTimeout(() => {
             this.is_active = false;
